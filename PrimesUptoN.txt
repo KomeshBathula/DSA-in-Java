@@ -1,0 +1,92 @@
+import java.util.Scanner;
+
+class PrimesUptoN {
+  public static void main(String[] args) {
+    Scanner sc = new Scanner(System.in);
+    int n = sc.nextInt();
+    for(int i=1;i<=n;i++){
+      if(isPrime(i)) System.out.print(i+" ");
+    }
+    n = sc.nextInt();
+    for(int i=1;i<=n;i++){
+      if(isPrime1(i)) System.out.print(i+" ");
+    }
+    n = sc.nextInt();
+    for(int i=1;i<=n;i++){
+      if(isPrime2(i)) System.out.print(i+" ");
+    }
+    n = sc.nextInt();
+    for(int i=1;i<=n;i++){
+      if(isPrime3(i)) System.out.print(i+" ");
+    }
+    n = sc.nextInt();
+    for(int i=1;i<=n;i++){
+      if(isPrime4(i)) System.out.print(i+" ");
+    }
+    n = sc.nextInt();
+    findPrimes(n);
+    sc.close();
+  }
+  static boolean isPrime(int n){
+    int c = 0;
+    for(int i=1;i<=n;i++){
+      if(n%i==0) c++;
+    }
+    if(c==2) return true;
+    return false;
+  }
+
+  static boolean isPrime1(int n){
+    int c = 1;
+    for(int i=1;i<=n/2;i++){
+      if(n%i==0) c++;
+    }
+    if(c==2) return true;
+    return false;
+  }
+
+  static boolean isPrime2(int n){
+    int c = 0;
+    for(int i=1;i*i<=n;i++){
+      if(n%i==0){
+        c++;
+        if(n/i!=i) c++;
+      }
+    }
+    if(c==2) return true;
+    return false;
+  }
+
+  static boolean isPrime3(int n){
+    if(n<=1) return false;
+    for(int i=2;i*i<=n;i++){
+      if(n%i==0) return false;
+    }
+    return true;
+  }
+
+  static boolean isPrime4(int n){
+    if(n<=1) return false;
+    if(n==2||n==3) return true;
+    if(n%2==0||n%3==0) return false;
+    for(int i=5;i*i<=Math.sqrt(n);i++){
+      if(n%i==0||n%(i+2)==0) return false;
+    }
+    return true;
+  }
+  static void findPrimes(int n){
+    boolean p[] = new boolean[n+1];
+    for(int i=0;i<=n;i++) p[i] = true;
+    p[0] = false;
+    p[1] = false;
+    for(int i = 2;i*i<=n;i++){
+      if(p[i] == true){
+        for(int j = i+i;j<=n;j=j+i) p[i] = false;
+      }
+    }
+    for(int i=2;i<=n;i++){
+      if(p[i] == true) System.out.print(i+" ");
+    }
+  }
+}
+

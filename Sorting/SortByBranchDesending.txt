@@ -1,0 +1,134 @@
+import java.util.*;
+class Student
+{
+        int rollno,marks;
+        String branch,sname;
+        double cgpa;
+
+        Student(String sname,int rollno,String branch,int marks,double cgpa)
+        {
+            this.sname = sname;
+            this.rollno = rollno;
+            this.branch = branch;
+            this.marks = marks;
+            this.cgpa = cgpa;
+        }
+
+        public String toString() {
+            return "Name: " + sname +
+                   ", Roll No: " + rollno +
+                   ", Branch: " + branch +
+                   ", Marks: " + marks +
+                   ", CGPA: " + cgpa;
+        }
+
+}
+class SortByBranchDescending implements Comparator<Student>
+{
+    public int compare(Student s1, Student s2) 
+    {
+        return s2.branch.compareTo(s1.branch);
+    }
+
+    public static void main(String[] args)
+    {
+        Scanner sc = new Scanner(System.in);
+
+        int n=0;
+        System.out.println("ENTER NO OF RECORDS");
+        n=sc.nextInt();
+
+        ArrayList<Student> al = new ArrayList<>();
+        for(int i=0;i<n;i++)
+        {
+            String sname;
+            int rollno;
+            String branch;
+            int marks;
+            double cgpa;
+
+            System.out.println("ENTER THE OF NAME");
+            sc.nextLine();
+            sname = sc.nextLine();
+
+                    System.out.println("ENTER THE OF ROLLNO");
+            rollno =sc.nextInt();
+
+                    System.out.println("ENTER THE OF Branch");
+            sc.nextLine();
+            branch = sc.nextLine();
+
+                    System.out.println("ENTER THE OF MARKS");
+            marks = sc.nextInt();
+
+                    System.out.println("ENTER THE OF CGPA");
+            cgpa = sc.nextDouble();
+
+            Student s = new Student(sname,rollno,branch,marks,cgpa);
+            al.add(s);
+        }
+        
+        System.out.println("BEFORE SORTING");
+
+        for(Student x : al)
+        {
+            System.out.println(x);
+        }
+
+        Collections.sort(al,new SortByBranchDescending());
+
+        System.out.println("AFTER SORTING");
+        
+        for(Student x : al)
+        {
+            System.out.println(x);
+        }
+    }
+}
+
+
+---------------------------------output--------------------------------------------------
+
+
+
+PS C:\Users\RAM TEJA\Desktop\MCCP\CUSTOM SORT> java -classpath . SortByBranchDescending
+ENTER NO OF RECORDS
+3
+ENTER THE OF NAME
+NANI
+ENTER THE OF ROLLNO
+88
+ENTER THE OF Branch
+CSE
+ENTER THE OF MARKS
+99
+ENTER THE OF CGPA
+9.9
+ENTER THE OF NAME
+SAI
+ENTER THE OF ROLLNO
+77
+ENTER THE OF Branch
+EEE
+ENTER THE OF MARKS
+87
+ENTER THE OF CGPA
+8.7
+ENTER THE OF NAME
+ANIL
+ENTER THE OF ROLLNO
+55
+ENTER THE OF Branch
+AIML
+ENTER THE OF MARKS
+66
+ENTER THE OF CGPA
+6.6
+BEFORE SORTING
+Name: NANI, Roll No: 88, Branch: CSE, Marks: 99, CGPA: 9.9
+Name: SAI, Roll No: 77, Branch: EEE, Marks: 87, CGPA: 8.7
+Name: ANIL, Roll No: 55, Branch: AIML, Marks: 66, CGPA: 6.6
+AFTER SORTING
+Name: SAI, Roll No: 77, Branch: EEE, Marks: 87, CGPA: 8.7
+Name: NANI, Roll No: 88, Branch: CSE, Marks: 99, CGPA: 9.9
+Name: ANIL, Roll No: 55, Branch: AIML, Marks: 66, CGPA: 6.6

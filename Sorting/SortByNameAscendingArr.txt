@@ -1,0 +1,112 @@
+import java.util.*;
+
+class Student {
+    String name, branch;
+    int marks, rollno;
+    double cgpa;
+
+    Student(String name, String branch, int rollno, int marks, double cgpa) {
+        this.name = name;
+        this.branch = branch;
+        this.rollno = rollno;
+        this.marks = marks;
+        this.cgpa = cgpa;
+    }
+
+    public String toString() {
+        return "NAME :" + name + "BRANCH :" + branch + "ROLLNO :" + rollno + "MARKS :" + marks + "CGPA:" + cgpa;
+    }
+}
+
+class SortByNameAscendingArr implements Comparator<Student> {
+    public int compare(Student s1, Student s2) {
+        return s1.name.compareTo(s2.name);
+    }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n;
+        System.out.println("ENTER NO OF RECORDS");
+        n = sc.nextInt();
+        sc.nextLine(); 
+
+        Student arr[] = new Student[n];
+        for (int i = 0; i < n; i++) {
+            System.out.println("ENTER NAME");
+            String name = sc.nextLine();
+            System.out.println("ENTER BRANCH");
+            String branch = sc.nextLine();
+            System.out.println("ENTER ROLLNO");
+            int rollno = sc.nextInt();
+            System.out.println("ENTER MARKS");
+            int marks = sc.nextInt();
+            System.out.println("ENTER CGPA");
+            double cgpa = sc.nextDouble();
+            sc.nextLine(); 
+
+            arr[i] = new Student(name, branch, rollno, marks, cgpa);
+        }
+
+        System.out.println("BEFORE SORTING");
+        for (Student x : arr) {
+            System.out.println(x);
+        }
+
+        Arrays.sort(arr, new SortByNameAscendingArr());
+
+        System.out.println("AFTER SORTING");
+        for (Student x : arr) {
+            System.out.println(x);
+        }
+
+    }
+}
+
+
+
+----------------------output-------------------------
+
+
+PS C:\Users\RAM TEJA\Desktop\MCCP\CUSTOM SORT\ARRAYS> javac SortByNameAscendingArr.java       
+PS C:\Users\RAM TEJA\Desktop\MCCP\CUSTOM SORT\ARRAYS> java -classpath . SortByNameAscendingArr
+ENTER NO OF RECORDS
+3
+ENTER NAME
+NANI
+ENTER BRANCH
+CSE
+ENTER ROLLNO
+88
+ENTER MARKS
+99
+ENTER CGPA
+9.9
+ENTER NAME
+SAI
+ENTER BRANCH
+55
+ENTER ROLLNO
+77
+ENTER MARKS
+77 
+ENTER CGPA
+7.7
+ENTER NAME
+ANIL
+ENTER BRANCH
+EEE
+ENTER ROLLNO
+55
+ENTER MARKS
+86   
+ENTER CGPA
+8.6
+BEFORE SORTING
+NAME :NANIBRANCH :CSEROLLNO :88MARKS :99CGPA:9.9
+NAME :SAIBRANCH :55ROLLNO :77MARKS :77CGPA:7.7
+NAME :ANILBRANCH :EEEROLLNO :55MARKS :86CGPA:8.6
+AFTER SORTING
+NAME :ANILBRANCH :EEEROLLNO :55MARKS :86CGPA:8.6
+NAME :NANIBRANCH :CSEROLLNO :88MARKS :99CGPA:9.9
+NAME :SAIBRANCH :55ROLLNO :77MARKS :77CGPA:7.7
+PS C:\Users\RAM TEJA\Desktop\MCCP\CUSTOM SORT\ARRAYS> 

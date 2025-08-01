@@ -1,0 +1,68 @@
+import java.util.*;
+class ForLoop{
+  public static void main(String[] args) {
+    LinkedList<Integer> linkedlist = new LinkedList<>();
+    linkedlist.add(40);
+    linkedlist.add(50);
+    linkedlist.add(60);
+    linkedlist.add(7);
+    linkedlist.add(9);
+    for(int i=0;i<linkedlist.size();i++){
+      System.out.print(linkedlist.get(i)+" ");
+    }
+  }
+}
+
+class ForEach{
+  public static void main(String[] args) {
+    LinkedList<Integer> linkedlist = new LinkedList<>();
+    linkedlist.add(40);
+    linkedlist.add(50);
+    linkedlist.add(60);
+    linkedlist.add(7);
+    linkedlist.add(9);
+    for(Integer li:linkedlist) System.out.print(li+" ");
+  }
+}
+
+class UsingIterator{
+    public static void main(String[] args) {
+    LinkedList<Integer> linkedlist = new LinkedList<>();
+    linkedlist.add(40);
+    linkedlist.add(50);
+    linkedlist.add(60);
+    linkedlist.add(7);
+    linkedlist.add(9);
+    Iterator<Integer> it = linkedlist.iterator();
+    while (it.hasNext()) {
+      System.out.print(it.next()+" ");
+    }
+  }
+}
+
+class UsingListIterator{
+  public static void main(String[] args) {
+    LinkedList<Integer> linkedlist = new LinkedList<>();
+    linkedlist.add(40);
+    linkedlist.add(50);
+    linkedlist.add(60);
+    linkedlist.add(7);
+    linkedlist.add(9);
+    ListIterator<Integer> it = linkedlist.listIterator();
+    while (it.hasNext()) {
+      System.out.print(it.next()+ " ");
+    }
+  }
+}
+
+class UsingLambda{
+  public static void main(String[] args) {
+    LinkedList<Integer> linkedlist = new LinkedList<>();
+    linkedlist.add(40);
+    linkedlist.add(50);
+    linkedlist.add(60);
+    linkedlist.add(7);
+    linkedlist.add(9);
+    linkedlist.forEach((x)-> System.out.print(x+ " "));
+  }
+}

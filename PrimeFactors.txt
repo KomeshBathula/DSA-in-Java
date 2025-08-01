@@ -1,0 +1,133 @@
+import java.util.*;
+class PrimeFactors{
+  public static void main(String[] args) {
+    Scanner sc = new Scanner(System.in);
+    int n = sc.nextInt();
+    displayPrimeFactors(n);
+    sc.close();
+  }
+  static void displayPrimeFactors(int n){
+    while(n%2==0){
+      System.out.print(2+" ");
+      n = n/2;
+    }
+    for(int i=3;i*i<=n;i+=2){
+      while (n%i==0) {
+        System.out.print(i+" ");
+        n = n/i;
+      }
+    }
+    if(n>1) System.out.print(n+" ");
+  }
+}
+
+class UniquePrimes{
+  public static void main(String[] args) {
+    Scanner sc = new Scanner(System.in);
+    int n = sc.nextInt();
+    displayUniquePrimes(n);
+    sc.close();
+  }
+  static void displayUniquePrimes(int n){
+    ArrayList<Integer> list = new ArrayList<>();
+    while(n%2==0){
+      if(!list.contains(2)){
+        list.add(2);
+        System.out.print(2+" ");
+      }
+      n = n/2;
+    }
+    for(int i=3;i*i<=n;i+=2){
+      while (n%i==0) {
+        if(!list.contains(i)){
+          list.add(i);
+          System.out.print(i+" ");
+        }
+        n = n/i;
+      }
+    }
+    if(n>1) 
+    if(!list.contains(n)){
+      list.add(n);
+      System.out.print(n+" ");
+    }
+  }
+}
+
+class SmallestPrimeFactor{
+  public static void main(String[] args) {
+    Scanner sc = new Scanner(System.in);
+    int n = sc.nextInt();
+    smallestPrimeFactor(n);
+    sc.close();
+  }
+  static void smallestPrimeFactor(int n){
+    ArrayList<Integer> list = new ArrayList<>();
+    while(n%2==0){
+      list.add(2);
+      n = n/2;
+    }
+    for(int i=3;i*i<=n;i+=2){
+      while (n%i==0) {
+        list.add(i);
+        n = n/i;
+      }
+    }
+    if(n>1) 
+    list.add(n);
+    int smallValue = list.getFirst();
+    System.out.println(smallValue);
+  }
+}
+
+class LargestPrimeFactor{
+  public static void main(String[] args) {
+    Scanner sc = new Scanner(System.in);
+    int n = sc.nextInt();
+    largestPrimeFactor(n);
+    sc.close();
+  }
+  static void largestPrimeFactor(int n){
+    ArrayList<Integer> list = new ArrayList<>();
+    while(n%2==0){
+      list.add(2);
+      n = n/2;
+    }
+    for(int i=3;i*i<=n;i+=2){
+      while (n%i==0) {
+        list.add(i);
+        n = n/i;
+      }
+    }
+    if(n>1) 
+    list.add(n);
+    int smallValue = list.getLast();
+    System.out.println(smallValue);
+  }
+}
+
+class SumOfPowers{
+  public static void main(String[] args) {
+    Scanner sc = new Scanner(System.in);
+    int n = sc.nextInt();
+    sumOfPowers(n);
+    sc.close();
+  }
+  static void sumOfPowers(int n){
+    int sum = 0;
+    while(n%2==0){
+      sum+=1;
+      n = n/2;
+    }
+    for(int i=3;i*i<=n;i+=2){
+      while (n%i==0) {
+        sum+=1;
+        n = n/i;
+      }
+    }
+    if(n>1) {
+      sum+=1;
+    }
+    System.out.println(sum);
+  }
+}
