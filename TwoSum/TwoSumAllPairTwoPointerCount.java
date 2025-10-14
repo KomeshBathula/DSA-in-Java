@@ -1,3 +1,4 @@
+package TwoSum;
 import java.util.Arrays;
 class TwoSumAllPairTwoPointerCount {
   public static void main(String[] args) {

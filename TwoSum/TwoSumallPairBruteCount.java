@@ -1,3 +1,4 @@
+package TwoSum;
 //import java.util.*;
 class TwoSumAllPairBrute {
   public static void main(String[] args) {

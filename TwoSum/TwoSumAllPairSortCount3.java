@@ -1,7 +1,8 @@
+package TwoSum;
 import java.util.*;
-class TwoSumAllHashMapCount {
+class TwoSumAllPairSortCount3 {
   public static void main(String[] args) {
-    int arr[] = {6,1,3,5,4,7,2,8};
+    int arr[] = {1,2,3,4,5,6,7,8};
     System.out.println(twoSumAllPairs(arr, 9));
   }
   static int twoSumAllPairs(int[] arr, int target) {
