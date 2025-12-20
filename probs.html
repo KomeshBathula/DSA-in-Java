@@ -4,8 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <link rel="stylesheet" href="probs.css" />
   </head>
   <body>
+    <button id="themeToggle"><img src="image.png" alt="" /></button>
     <p>Thank You... To See My Work on Coding</p>
     <p>Starting Off With Number Problems :</p>
     <a
@@ -25,7 +27,7 @@
     <a href="https://github.com/KomeshBathula/DSA-in-Java/tree/main/TwoSum"
       >Two Sum Problems</a
     >
-    <p>And Then Theree Sum Problems Too... Just like Two Sum</p>
+    <p>And Then Three Sum Problems Too... Just like Two Sum</p>
     <a href="https://github.com/KomeshBathula/DSA-in-Java/tree/main/ThreeSum"
       >Three Sum Problems</a
     >
@@ -49,5 +51,12 @@
     <a href="https://github.com/KomeshBathula/DSA-in-Java/tree/main/Docs"
       >Documentations</a
     >
+    <script>
+      const toggleBtn = document.getElementById("themeToggle");
+
+      toggleBtn.addEventListener("click", () => {
+        document.body.classList.toggle("dark");
+      });
+    </script>
   </body>
 </html>
