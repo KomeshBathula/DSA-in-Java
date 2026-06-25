@@ -1,6 +1,6 @@
-package Graphs;
+package Graphs.Representations;
 
-import java.util.Arrays;
+// import java.util.Arrays;
 
 class Graph {
     int n;

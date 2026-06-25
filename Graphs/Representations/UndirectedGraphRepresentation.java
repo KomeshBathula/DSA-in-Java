@@ -1,4 +1,4 @@
-package Graphs;
+package Graphs.Representations;
 
 class Graph {
     int n;
@@ -9,6 +9,7 @@ class Graph {
     }
     void addEdge(int u, int v) {
         M[u][v] = 1;
+        M[v][u] = 1;
     }
     void printMatrix() {
         for (int i = 0; i < n; i++) 
@@ -26,7 +27,7 @@ class Graph {
     }
 }
 
-public class DirectedGraphRepresentation {
+public class UndirectedGraphRepresentation {
     public static void main(String[] args) {
         Graph g = new Graph(5);
         g.addEdge(0, 1);
