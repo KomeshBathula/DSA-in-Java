@@ -1,11 +1,13 @@
-package Graphs;
+package Graphs.Traversals;
 
 import java.util.Arrays;
+import java.util.Scanner;
 
-class Graph {
+class Graph1 {
+    Scanner sc = new Scanner(System.in);
     int n;
     int M[][];
-    Graph(int n) {
+    Graph1(int n) {
         this.n = n;
         M = new int[n][n];
     }
@@ -22,10 +24,21 @@ class Graph {
             }
         }
     }
+    void traversal(int[] visited) {
+        while (true) {
+            System.out.println("Enter start of Node");
+            int start = sc.nextInt();
+            if (start == -1) 
+                return;
+            DFSTraversal(n, start, visited);
+            Arrays.fill(visited, -1);
+        }
+    }
 }
-public class DFSUsingMatrix {
+public class DFSMatrixRecursion {
+
     public static void main(String[] args) {
-        Graph g = new Graph(5);
+        Graph1 g = new Graph1(5);
         g.addEdge(0, 1);
         g.addEdge(1, 2);
         g.addEdge(2, 3);
@@ -34,6 +47,6 @@ public class DFSUsingMatrix {
         g.addEdge(1, 3);
         int[] visited = new int[5];
         Arrays.fill(visited, -1);
-        g.DFSTraversal(5, 0, visited);
+        g.traversal(visited);
     }
 }

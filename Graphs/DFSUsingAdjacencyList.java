@@ -13,8 +13,13 @@ class Graph {
         M[u][v] = 1;
         M[v][u] = 1;
     }
-    void DFSTraversal(int n, int start, int[] visited) {
-        
+    void display() {
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < n; j++) {
+                System.out.print(M[i][j]+" ");
+            }
+            System.out.println();
+        }
     }
 }
 public class DFSUsingAdjacencyList {
@@ -26,8 +31,6 @@ public class DFSUsingAdjacencyList {
         g.addEdge(3, 4);
         g.addEdge(0, 4);
         g.addEdge(1, 3);
-        int[] visited = new int[5];
-        Arrays.fill(visited, -1);
-        g.DFSTraversal(5, 0, visited);
+        g.display();
     }
 }
