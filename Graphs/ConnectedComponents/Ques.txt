@@ -1,0 +1,12 @@
+1. Given undirected disconnected graph find and return all the components.
+    component 1: 0 2 3 1
+    component 2: 1 2 3
+2. solve above problem using adjacency matrix and adjacency list.
+3.same problem adjacency matrix without recursion
+4. same problem adjacency list with recursion
+5. same problem adjacency list without recursion.
+6.same problem with adjacency
+7.same problem with hashmap and recursion.
+8.same problem using adjacency matrix bfs and
+9.adjacency list and hashmap
+10.given undirected disconnected graph find no of components.
