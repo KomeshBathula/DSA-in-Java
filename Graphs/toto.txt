@@ -1,0 +1,2 @@
+1. Given an adjacency list with n nodes verify whether it is biparite or not using DFS. 
+2. Same problem using BFS
